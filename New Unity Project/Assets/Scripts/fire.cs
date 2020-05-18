@@ -7,6 +7,9 @@ public class fire : MonoBehaviour
     public float range = 200f;
 
     public Camera TPS_Cam;
+
+    public ParticleSystem Left_Fire;
+    public ParticleSystem Right_Fire;
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +21,9 @@ public class fire : MonoBehaviour
 
     void Shoot()
     {
+        Left_Fire.Play();
+        Right_Fire.Play();
+
         RaycastHit hit;
        if(Physics.Raycast(TPS_Cam.transform.position, TPS_Cam.transform.forward, out hit, range))
         {
