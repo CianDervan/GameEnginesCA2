@@ -10,12 +10,15 @@ public class fire : MonoBehaviour
 
     public ParticleSystem Left_Fire;
     public ParticleSystem Right_Fire;
+
+    public AudioSource sound;
     // Update is called once per frame
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))
         {
             Shoot();
+            sound.Play();
         }
     }
 

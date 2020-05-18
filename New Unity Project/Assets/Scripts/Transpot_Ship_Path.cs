@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class path : MonoBehaviour
+public class Transpot_Ship_Path : MonoBehaviour
 {
-
     public float movespeed = 10f;
 
     private bool isWalking = false;
@@ -13,7 +12,7 @@ public class path : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -26,14 +25,14 @@ public class path : MonoBehaviour
 
         if (isWalking == true)
         {
-            transform.position += transform.right * movespeed * Time.deltaTime;
+            transform.position += transform.forward * movespeed * Time.deltaTime;
         }
     }
 
-   IEnumerator Wandering()
+    IEnumerator Wandering()
     {
         int walk_Wait = Random.Range(1, 3);
-        int walk_Time = Random.Range(1, 5);
+        int walk_Time = Random.Range(5, 15);
 
         isWandering = true;
 
@@ -43,6 +42,4 @@ public class path : MonoBehaviour
         isWalking = false;
         isWandering = false;
     }
-    
-  
 }
