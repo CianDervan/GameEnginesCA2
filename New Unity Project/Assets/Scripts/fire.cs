@@ -38,6 +38,11 @@ public class fire : MonoBehaviour
                 Target1.TakeDamage(damage);
             }
 
+            Target_Death Target2 = hit.transform.GetComponent<Target_Death>();
+            if (Target2 != null)
+            {
+                Target2.TakeDamage(damage);
+            }
 
             target Target = hit.transform.GetComponent<target>();
             if(Target != null)
