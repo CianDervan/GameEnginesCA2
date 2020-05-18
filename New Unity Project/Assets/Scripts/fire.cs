@@ -32,6 +32,13 @@ public class fire : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
+            Target_Destroyer Target1 = hit.transform.GetComponent<Target_Destroyer>();
+            if (Target1 != null)
+            {
+                Target1.TakeDamage(damage);
+            }
+
+
             target Target = hit.transform.GetComponent<target>();
             if(Target != null)
             {
