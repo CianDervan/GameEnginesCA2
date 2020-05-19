@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Target_Destroyer : MonoBehaviour
 {
+    public AudioSource exp;
+
     // Start is called before the first frame update
     public float health = 250f;
 
@@ -11,6 +13,7 @@ public class Target_Destroyer : MonoBehaviour
         health -= amount;
         if (health <= 0f)
         {
+            exp.Play();
             Die();
         }
     }
