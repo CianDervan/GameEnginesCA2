@@ -3,20 +3,22 @@ using UnityEngine;
 
 public class Target_Death : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     public float health = 250f;
+    public AudioSource exp;
 
     public void TakeDamage(float amount)
     {
         health -= amount;
         if (health <= 0f)
         {
+            exp.Play();
             Die();
         }
     }
 
     void Die()
     {
-        Destroy(gameObject);
+        Destroy(gameObject,6f);
     }
 }

@@ -20,6 +20,6 @@ public class Target_Destroyer : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 1.5f);
     }
 }
